@@ -1,6 +1,10 @@
 final public class StorageProvider {
     
-    private var storages = [String: Storage]()
+    private var storages: [String: Storage]
+    
+    public init() {
+        self.storages = [:]
+    }
     
     public func getStorage(with storageConfiguration: StorageConfiguration) -> Storage {
         if let storage = self.storages[storageConfiguration.identifier] {
