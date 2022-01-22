@@ -14,7 +14,8 @@ let package = Package(
             targets: ["Storage"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/realm/realm-swift",
+        .package(name: "Realm",
+                 url: "https://github.com/realm/realm-swift",
                  from: "10.21.1"),
         .package(url: "https://github.com/apple/swift-collections.git",
                  from: "1.0.2")
@@ -24,7 +25,9 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "Storage",
-            dependencies: []),
+            dependencies: [
+                .product(name: "Realm", package: "Realm")
+            ]),
         .testTarget(
             name: "StorageTests",
             dependencies: ["Storage"]),
