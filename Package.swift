@@ -5,15 +5,19 @@ import PackageDescription
 
 let package = Package(
     name: "Storage",
+    platforms: [
+        .iOS(.v13)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "Storage",
             targets: ["Storage"]),
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+        .package(url: "https://github.com/realm/realm-swift",
+                 from: "10.21.1"),
+        .package(url: "https://github.com/apple/swift-collections.git",
+                 from: "1.0.2")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
