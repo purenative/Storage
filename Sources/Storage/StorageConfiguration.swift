@@ -62,11 +62,11 @@ public struct StorageConfiguration {
 
 extension StorageConfiguration: Hashable, Equatable {
     
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(identifier)
     }
     
-    static func ==(lhs: StorageConfiguration, rhs: StorageConfiguration) -> Bool {
+    public static func ==(lhs: StorageConfiguration, rhs: StorageConfiguration) -> Bool {
         lhs.hashValue == rhs.hashValue
     }
     

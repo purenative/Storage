@@ -16,7 +16,7 @@ final public class StoragePool<P: Properties & Hashable>: ObservableObject {
     @Published
     public private(set) var objects: [P] = []
     
-    pulblic var filter: NSPredicate? {
+    public var filter: NSPredicate? {
         didSet {
             notifyAboutChanges()
         }
