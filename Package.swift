@@ -26,7 +26,8 @@ let package = Package(
         .target(
             name: "Storage",
             dependencies: [
-                .product(name: "Realm", package: "Realm")
+                .product(name: "RealmSwift", package: "Realm"),
+                .product(name: "Collections", package: "swift-collections")
             ]),
         .testTarget(
             name: "StorageTests",
