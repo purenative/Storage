@@ -43,6 +43,13 @@ extension Storage {
         
     }
     
+    public func objectOf<O: Object, KeyType>(type: O.Type,
+                                             withPrimaryKey primaryKey: KeyType) -> O? {
+        
+        realm.object(ofType: type,
+                     forPrimaryKey: primaryKey)
+    }
+    
     // MARK: Creation/Insertion/Deletion
     
     public func store<O: Object, C: Collection>(collection: C,
