@@ -64,6 +64,14 @@ extension Storage {
         
     }
     
+    public func deleteObject<O: Object, KeyType>(ofType type: O.Type, withPrimaryKey primaryKey: KeyType) {
+        if let object = realm.object(ofType: type, forPrimaryKey: primaryKey) {
+            try! realm.write {
+                realm.delete(object)
+            }
+        }
+    }
+    
     public func deleteAll<O: Object>(ofType type: O.Type) {
         
         try! realm.write {
